@@ -29,8 +29,9 @@ def save_dict(conn):
 def main():
     while True: ## REPL - Read Execute Program Loop
         cmd = input("Command: ")
-        if cmd == "LIST":
-            print(read_dict(conn))
+        if cmd == "list":
+            for i, wd, trans in read_dict(conn):
+                print(f"{i}: {wd} - {trans}")
         elif cmd == "ADD":
             name = input("  Word: ")
             phone = input("  Translation: ")
