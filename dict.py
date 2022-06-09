@@ -25,19 +25,23 @@ def save_dict(conn):
     cur.execute("COMMIT;")
     cur.close()
 ## some more
-while True: ## REPL - Read Execute Program Loop
-    cmd = input("Command: ")
-    if cmd == "LIST":
-        print(read_dict(conn))
-    elif cmd == "ADD":
-        name = input("  Word: ")
-        phone = input("  Translation: ")
-        add_word(conn, name, phone)
-    elif cmd == "DELETE":
-        ID = input("  ID: ")
-        delete_word(conn, ID)
-    elif cmd == "QUIT":
-        save_dict(conn)
-        exit()
 
+def main():
+    while True: ## REPL - Read Execute Program Loop
+        cmd = input("Command: ")
+        if cmd == "LIST":
+            print(read_dict(conn))
+        elif cmd == "ADD":
+            name = input("  Word: ")
+            phone = input("  Translation: ")
+            add_word(conn, name, phone)
+        elif cmd == "DELETE":
+            ID = input("  ID: ")
+            delete_word(conn, ID)
+        elif cmd == "QUIT":
+            save_dict(conn)
+            exit()
+
+
+main()
 # some comments
