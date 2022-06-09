@@ -27,16 +27,16 @@ def save_dict(C):
 ## some more
 while True: ## REPL - Read Execute Program Loop
     cmd = input("Command: ")
-    if cmd == "list":
+    if cmd == "LIST":
         print(read_dict(conn))
-    elif cmd == "add":
+    elif cmd == "ADD":
         name = input("  Word: ")
         phone = input("  Translation: ")
         add_word(conn, name, phone)
-    elif cmd == "delete":
+    elif cmd == "DELETE":
         ID = input("  ID: ")
         delete_word(conn, ID)
-    elif cmd == "quit":
+    elif cmd == "QUIT":
         save_dict(conn)
         exit()
 
